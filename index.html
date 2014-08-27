@@ -5,7 +5,7 @@
     <script type="text/javascript" src="lib/js/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </head>
-  <body class="container" ng-controller="StoreController as store">
+  <body class="container-fluid" ng-controller="StoreController as store">
     <div>
       <h1 style="float:left">Catalog</h1>
       <button ng-show="getCart().length"
@@ -14,7 +14,7 @@
         Checkout {{getCartPrice()}} &euro; 
       </button>
     </div>
-    <table class="table table-hover">
+    <table class="table-responsive table-hover">
       <thead>
         <tr>
           <th>Name</th>
@@ -27,8 +27,7 @@
         <div>
         <tr ng-repeat="product in products" 
             ng-class="{'success' : product.inCart}"
-            ng-click="changeInCartState(product)"
-            ng-model="checked">
+            ng-click="changeInCartState(product)">
         	<td>{{product.name}}</td>
           <td>{{product.price}}</td>
           <td>{{product.description}}</td>
