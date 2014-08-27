@@ -14,29 +14,31 @@
         Checkout {{getCartPrice()}} &euro; 
       </button>
     </div>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>&euro;</th>
-          <th>Description</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <div>
-        <tr ng-repeat="product in products" 
-            ng-class="{'success' : product.inCart}"
-            ng-click="changeInCartState(product)">
-        	<td>{{product.name}}</td>
-          <td>{{product.price}}</td>
-          <td>{{product.description}}</td>
-          <td width="30%">
-            <input type="checkbox" class="pull-right" ng-model="product.inCart"/>
-          </td>
-        </tr>
-      </tbody>
-  </table>
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>&euro;</th>
+            <th>Description</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <div>
+          <tr ng-repeat="product in products" 
+              ng-class="{'success' : product.inCart}"
+              ng-click="changeInCartState(product)">
+          	<td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.description}}</td>
+            <td width="30%">
+              <input type="checkbox" class="pull-right" ng-model="product.inCart"/>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
   </body>
 </html>
 
